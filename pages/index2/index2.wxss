@@ -1,0 +1,170 @@
+.container {
+  display: flex;
+  height: 100vh;
+  background-color: #b0dcd5;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  width: 100%;
+}
+
+.search-area {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  height: 60rpx;
+  padding: 1rpx;
+  width: 90%;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.search-input {
+  height: 100%;
+  display: flex;
+  border-radius: 10px;
+  justify-content: center;
+  text-align: center;
+  flex-grow: 1;
+  background-color: #ffffff;
+  color: #000;
+}
+
+.search-icon {
+  width: 50rpx;
+  margin: 10rpx;
+}
+
+swiper {
+  height: 27%;
+  width: 96%;
+  margin-top: 40rpx;
+}
+
+swiper swiper-item {
+  height: 40%;
+  width: 96%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+swiper swiper-item>image {
+  height: 230rpx;
+}
+
+.recommended_list {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20rpx;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.recommended_list>text {
+  font-size: 18px;
+  font-weight: bolder;
+  margin-left: 30rpx;
+}
+
+.recommended_list .more {
+  font-size: 14px;
+  font-weight: lighter;
+  margin-right: 20rpx;
+  background-color: rgb(226, 235, 179);
+  border-radius: 10px;
+  padding: 3px;
+  border: 1px solid rgb(226, 235, 179);
+}
+
+scroll-view {
+  display: flex;
+  height: 280rpx;
+  width: 90%;
+  background-color: rgb(104, 152, 134);
+  margin: 20rpx;
+  white-space: nowrap;
+  border-radius: 10px;
+}
+
+.item_detail {
+  display: inline-table;
+  height: 100rpx;
+  width: 50%;
+  background-color: white;
+  margin-left: 15rpx;
+  margin-top: 5.5%;
+  margin-right: 15rpx;
+  border-radius: 10rpx;
+}
+
+.item_detail>.number{
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 1rpx 48%;
+}
+
+.item_detail>image {
+  height: 100rpx;
+  width: 100rpx;
+}
+
+.recommended_list3 {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20rpx;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.recommended_list3>text{
+  font-size: 18px;
+  font-weight: bolder;
+  margin-left: 30rpx;
+}
+
+.recommended_list3>.more {
+  font-size: 14px;
+  font-weight: lighter;
+  margin-right: 20rpx;
+  background-color: rgb(226, 235, 179);
+  border-radius: 10px;
+  padding: 3px;
+  border: 1px solid rgb(226, 235, 179);
+}
+
+.icons{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.icons-detail{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: space-evenly;
+}
+
+.img{
+  height: 70rpx;
+  width: 70rpx;
+  display: flex;
+  background-color:rgb(104, 152, 134);
+  border-radius: 50%;
+  margin:0 auto;
+  padding: 18rpx;
+}
+
+.icons-detail>text{
+  font-size: 14px;
+  margin: 20rpx 0;
+}

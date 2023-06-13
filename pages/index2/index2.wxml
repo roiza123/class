@@ -1,0 +1,54 @@
+<view class="container">
+  <view class="search-area">
+    <input class="search-input" type="text" placeholder="请输入歌曲名" bindinput="onInput" />
+    <image class="search-icon" src="/icon/搜索.png" mode="widthFix" bindtap="onSearch"></image>
+  </view>
+  <swiper autoplay interval="6000" circular indicator-dots  class="banner">
+    <swiper-item>
+      <image mode="aspectFit" src="/picture/1.jpg"></image>
+    </swiper-item>
+    <swiper-item>
+      <image mode="aspectFit" src="/picture/2.jpg"></image>
+    </swiper-item>
+    <swiper-item>
+      <image mode="aspectFit" src="/picture/3.jpg"></image>
+    </swiper-item>
+    <swiper-item>
+      <image mode="aspectFit" src="/picture/4.jpg"></image>
+    </swiper-item>
+  </swiper>
+  <view class="icons">
+    <view class="icons-detail">
+      <image class="img" src="/icon/音乐推荐.png"></image>
+      <text>今日推荐</text>
+    </view>
+    <view class="icons-detail">
+      <image class="img" src="/icon/歌单.png"></image>
+      <text>我的歌单</text>
+    </view>
+    <view class="icons-detail">
+      <image class="img" src="/icon/榜单 (1).png"></image>
+      <text>音乐榜单</text>
+    </view>
+    <view class="icons-detail">
+      <image class="img" src="/icon/我喜欢.png"></image>
+      <text>猜我喜欢</text>
+    </view>
+  </view>
+  <view class="recommended_list">
+    <text>音乐排行榜</text>
+    <text class="more">查看更多</text>
+  </view>
+  <scroll-view class="recommend_list2" scroll-x scroll-left="20" enhanced paging-enabled enable-flex="">
+    <view class="item_detail" wx:for="{{list}}" wx:key="id">
+      <text class="number">{{index+1}}</text>
+      <image src="{{item.picUrl}}"></image>
+      <view></view>
+      <text class="name">{{item.name}}</text>
+    </view>
+  </scroll-view>
+  <view class="recommended_list3">
+    <text>每日推荐</text>
+    <text class="more">查看更多</text>
+  </view>
+</view>

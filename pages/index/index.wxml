@@ -1,0 +1,17 @@
+<view class="container">
+  <view class="logo">
+    <text>罐装音乐</text>
+  </view>
+  <view class="login">
+    <form bindsubmit="onLogin" data-username="username" data-password="password">
+      <view class="partoflogin">
+        账号：<input type="text" name="username"/>
+      </view>
+      <view class="partoflogin">
+        密码：<input type="password" name="password"/>
+      </view>
+      <button form-type="submit" >登录</button>
+    </form>
+  </view>
+  <view bindtap="turnToRegister" class="register">点我注册</view>
+</view>

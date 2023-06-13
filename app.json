@@ -1,0 +1,42 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/music/music",
+    "pages/index2/index2",
+    "pages/register/register",
+    "pages/mine/mine",
+    "pages/search/search",
+    "pages/listen/listen"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#b0dcd5",
+    "navigationBarTitleText": "罐装音乐",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "color": "#6898864",
+    "list": [
+      {
+        "selectedIconPath": "icon/发现 (3).png",
+        "iconPath": "icon/发现 (2).png",
+        "pagePath": "pages/index2/index2",
+        "text": "发现"
+      },
+      {
+        "selectedIconPath": "icon/音乐 (1).png",
+        "iconPath": "icon/音乐.png",
+        "pagePath": "pages/listen/listen",
+        "text": "播放"
+      },
+      {
+        "selectedIconPath": "icon/我的 (1).png",
+        "iconPath": "icon/我的.png",
+        "pagePath": "pages/mine/mine",
+        "text": "我的"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

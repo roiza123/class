@@ -1,0 +1,34 @@
+<view class="container">
+  <form bindsubmit="onRegister">
+    <view class="box">
+      账号：<input type="text" name="username" />
+    </view>
+    <view class="box">
+      密码：<input type="password" name="password" />
+    </view>
+    <view class="box">
+      性别：
+      <radio-group bindchange="onSexChange">
+          <view class="choosebox">
+            <radio value="1" name="sex"></radio><text>男</text>
+            <radio value="0" name="sex"></radio><text>女</text>
+          </view>
+      </radio-group>
+    </view>
+    <view class="box">
+      昵称：<input type="text" name="user" />
+    </view>
+    <view class="box">
+      手机号：<input type="text" name="phone" />
+    </view>
+    <view class="box">
+      生日：
+      <picker mode="date" value="{{birthday}}" bindchange="onDateChange">
+        <text>{{birthday}}</text>
+      </picker>
+    </view>
+    <view class="box">
+      <button form-type="submit">提交注册</button>
+    </view>
+  </form>
+</view>
