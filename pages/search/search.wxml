@@ -1,13 +1,13 @@
 <view class="container">
   <view class="search-area">
-    <input class="search-input" type="text" placeholder="请输入歌曲名" bindinput="onInput" />
+    <input class="search-input" type="text" placeholder="请输入歌曲名" bindinput="onInput" value="{{name}}"/>
     <image class="search-icon" src="/icon/搜索.png" mode="widthFix" bindtap="onSearch"></image>
   </view>
   <view class="search-result" >
-    <view bindtap="onTurntolisten" class="music-box" wx:for="{{searchResult}}" wx:key="id">
-      <!-- <image class="music-pic" src="{{item.album.artist.img1V1Url}}" mode="aspectFill"></image> -->
-      <!-- <text>{{item.name}}</text> -->
-      <text>{{item}}</text>
+    <view bindtap="onTurntolisten" class="music-box" wx:for="{{searchResult}}" wx:key="id" data-id="{{item.id}}" data-song="{{item.name}}">
+      <image class="music-pic" src="/icon/没有碟了.png" mode="aspectFill" ></image>
+      <text class="song">{{item.name}}</text>
+      <text class="singer">{{item.artists[0].name}}</text>
     </view>
   </view>
 </view>

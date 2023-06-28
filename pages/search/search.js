@@ -10,18 +10,27 @@ Page({
     newname:"",
   },
 
-  // onInput(e) {
-  //   this.setData({
-  //     newname: e.detail.value
-  //   })
-  // },
+  
+  onInput(e) {
+    this.setData({
+      newname: e.detail.value
+    })
+  },
 
-  // onSearch(e) {
-  //   console.log(this.data.newname)
-  //   wx.navigateTo({
-  //     url: '/pages/search/search?newname='+this.data.newname,
-  //   })
-  // },
+  onSearch(e) {
+    console.log(this.data.newname)
+    wx.navigateTo({
+      url: '/pages/search/search?newname='+this.data.newname,
+    })
+  },
+
+  onTurntolisten(e){
+    console.log(e.currentTarget.dataset);
+    let musicId = e.currentTarget.dataset.id
+    wx.reLaunch({
+      url: '/pages/listen/listen?musicId='+musicId,
+    })
+  },
 
   /**
    * 生命周期函数--监听页面加载
@@ -35,14 +44,13 @@ Page({
       url: 'http://localhost:3000/search',
       data: {
         keywords: this.data.name,
-        limit: 10,
+        limit: 8,
         type: 1
       },
       success(res) {
-        console.log(res.data.result.songs)
-        for (let i = 0; i < 10; i++) {
-          _this.data.searchResult.push(res.data.result.songs[i])
-        }
+        _this.setData({
+          searchResult:res.data.result.songs
+        })
         console.log(_this.data.searchResult)
       }
     })

@@ -1,0 +1,10 @@
+<view class="container">
+  <view class="alovesong" wx:for="{{loveList}}" data-musicId="{{item.id}}" wx:key="id" bindtap="onTurntolisten">
+    <image src="/icon/音乐推荐.png"></image>
+    <text class="songname">{{item.name}}</text>
+    <text class="author">{{item.al.name}}</text>
+  </view>
+  <view class="turntomine">
+    <text bindtap="onTurntomine">返回首页</text>
+  </view>
+</view>

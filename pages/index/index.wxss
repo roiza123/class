@@ -59,9 +59,16 @@ button{
   color: rgb(104, 152, 134);
 }
 
-.register{
+.bottle{
   display: flex;
-  justify-content: center;
-  margin-top: 90rpx;
+  flex-direction: row;
+  justify-content: space-around;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.bottle>view{
   color: rgb(104, 152, 134);
 }
+ 
+

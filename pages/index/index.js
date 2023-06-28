@@ -4,26 +4,28 @@ Page({
    * 页面的初始数据
    */
   data: {
-     username:''
+     phone:''
   },
 
   onLogin(e) {
     console.log(e.detail.value);
-    let username = e.detail.value.username;
+    let phone = e.detail.value.phone;
     let password = e.detail.value.password;
-    this.setData({username:username})
-    if (username != null && password != null) {
+    this.setData({phone:phone})
+    if (phone != null && password != null) {
       wx.request({
-        url: 'http://localhost:8080/music_player_war_exploded/ifRight',
+        url: 'http://localhost:8080/music/user/login',
         data: {
-          username: username,
+          phone: phone,
           password: password,
         },
+        method:'POST',
         success(res) {
           console.log(res);
-          if (res.data == true) {
-            wx.redirectTo({
-              url: '/pages/index2/index2?username='+e.detail.value.username,
+          if (res.data.message == "成功") {
+            wx.setStorageSync('phone', res.data.data.phone)
+            wx.switchTab({
+              url: '/pages/index2/index2',
             })
           } else {
             wx.showModal({
@@ -40,6 +42,12 @@ Page({
   turnToRegister(e){
     wx.redirectTo({
       url: '/pages/register/register',
+    })
+  },
+
+  turntofind(e){
+    wx.redirectTo({
+      url: '/pages/find_password/find_password',
     })
   },
   

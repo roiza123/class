@@ -1,31 +1,17 @@
 <view class="container">
+  <view class="logo">
+    <text>罐装音乐</text>
+  </view>
   <form bindsubmit="onRegister">
     <view class="box">
-      账号：<input type="text" name="username" />
+      账号(手机号)：<input type="text" name="phone" />
     </view>
     <view class="box">
-      密码：<input type="password" name="password" />
+      密码：<input bindinput="onGetPassword" type="password" name="password" value="{{password}}" />
     </view>
     <view class="box">
-      性别：
-      <radio-group bindchange="onSexChange">
-          <view class="choosebox">
-            <radio value="1" name="sex"></radio><text>男</text>
-            <radio value="0" name="sex"></radio><text>女</text>
-          </view>
-      </radio-group>
-    </view>
-    <view class="box">
-      昵称：<input type="text" name="user" />
-    </view>
-    <view class="box">
-      手机号：<input type="text" name="phone" />
-    </view>
-    <view class="box">
-      生日：
-      <picker mode="date" value="{{birthday}}" bindchange="onDateChange">
-        <text>{{birthday}}</text>
-      </picker>
+      确认密码：<input bindinput="onCheckPassword" type="password" name="password" />
+      <image src="{{ifequal?'/icon/对.png':'/icon/错误.png'}}"></image>
     </view>
     <view class="box">
       <button form-type="submit">提交注册</button>

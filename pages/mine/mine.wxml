@@ -1,2 +1,49 @@
-<!--pages/mine/mine.wxml-->
-<text>pages/mine/mine.wxml</text>
+<view class="container">
+  <view class="user-box">
+    <view class="box">
+      <image src="{{headUrl}}"></image>
+      <text>{{nickname}}</text>
+    </view>
+    <text bindtap="onDetailMine">个人中心 ></text>
+  </view>
+  <view class="menu">
+    <view class="menu-detail">
+      <image class="img" src="/icon/播放歌单.png"></image>
+      <text>我的歌单</text>
+    </view>
+    <view class="menu-detail" bindtap="onDetailLove">
+      <image class="img" src="/icon/我喜欢.png"></image>
+      <text>我的喜欢</text>
+    </view>
+    <view class="menu-detail" bindtap="onTurntotodayRecommend">
+      <image class="img" src="/icon/音乐推荐.png"></image>
+      <text>今日推荐</text>
+    </view>
+    <view class="menu-detail" bindtap="onDetailListen">
+      <image class="img" src="/icon/历史记录.png"></image>
+      <text>最近收听</text>
+    </view>
+  </view>
+  <view class="nothinglist">
+    <view class="nothing">
+      <text>已购音乐</text>
+      <text class="sign">></text>
+    </view>
+    <view class="nothing">
+      <text>关注歌手</text>
+      <text class="sign">></text>
+    </view>
+    <view class="nothing">
+      <text>常用功能</text>
+      <text class="sign">></text>
+    </view>
+    <view class="nothing">
+      <text>个性设置</text>
+      <text class="sign">></text>
+    </view>
+    <view class="nothing">
+      <text>私人漫游</text>
+      <text class="sign">></text>
+    </view>
+  </view>
+</view>

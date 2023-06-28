@@ -1,0 +1,57 @@
+.container {
+  display: flex;
+  background-color: #b0dcd5;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  width: 100%;
+}
+
+.listensong{
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  width: 96%;
+  margin: 6px 0;
+  height: 60px;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.listensong>image{
+  background-color: rgb(104, 152, 134);
+  height: 40px;
+  width: 40px;
+  padding: 4px;
+  border-radius: 50%;
+  margin: 0 10px;
+}
+.listensong>.songname{
+  width: 100px;
+  overflow:hidden; 
+  text-overflow:ellipsis; 
+  white-space:nowrap;
+}
+
+.listensong>.author{
+  width: 120px;
+  overflow:hidden; 
+  text-overflow:ellipsis; 
+  white-space:nowrap;
+}
+
+.turntomine{
+  height: 80px;
+  margin-top: 20px;
+
+}
+
+.turntomine>text{
+  height: 20px;
+  width: 70px;
+  font-size: 18px;
+  background-color:rgb(226, 235, 179) ;
+  padding: 10px;
+  border-radius: 10px;
+}

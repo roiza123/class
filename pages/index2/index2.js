@@ -5,8 +5,6 @@ Page({
    * 页面的初始数据
    */
   data: {
-    user: "",
-    username: "",
     recommended_list: [],
     list: [{
       name: "向云端",
@@ -52,6 +50,36 @@ Page({
     })
   },
 
+  onTurntomusictop(e){
+    wx.redirectTo({
+      url: '/pages/music-top/music-top',
+    })
+  },
+
+  onSeeRecommendation(e){
+    wx.redirectTo({
+      url: '/pages/today_recommend/today_recommend',
+    })
+  },
+  
+  onTurntomusictop(e){
+    wx.redirectTo({
+      url: '/pages/music-top/music-top',
+    })
+  },
+
+  onTurntotodayRecommend(e){
+    wx.redirectTo({
+      url: '/pages/today_recommend/today_recommend',
+    })
+  },
+
+  onGuessWhatilike(e){
+    wx.redirectTo({
+      url: '/pages/guess_what_ilike/guess_what_ilike',
+    })
+  },
+  
   /**
    * 生命周期函数--监听页面加载
    */
@@ -61,27 +89,31 @@ Page({
       username: options.username,
     })
     wx.request({
-      url: 'http://localhost:8080/music_player_war_exploded/searchUser',
-      data: {
-        username: this.data.username
-      },
-      success(res) {
-        console.log(res)
-        _this.setData({
-          user: res.data.name
-        })
-      }
-    });
-    wx.request({
       url: 'http://localhost:3000/top/list',
       data: {
         idx: 1
       },
       success(res) {
+        let list = []
         for (let i = 0; i < 10; i++) {
-          _this.data.recommended_list.push(res.data.playlist.tracks[i].al)
+          list.push(res.data.playlist.tracks[i])
         }
-        console.log(_this.data.recommended_list)
+        _this.setData({
+          recommendedList:list
+        })
+      }
+    })
+    //找听歌人
+    let phone = wx.getStorageSync("phone")
+    wx.request({
+      url: 'http://localhost:8080/music/user/userinfo',
+      data:{
+        phone:phone
+      },
+      success(res){
+        console.log(res.data)
+        wx.setStorageSync('uid', res.data.data.uid)
+        wx.setStorageSync('nickname', res.data.data.nickname)
       }
     })
   },

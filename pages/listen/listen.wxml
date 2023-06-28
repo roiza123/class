@@ -1,2 +1,21 @@
-<!--pages/listen/listen.wxml-->
-<text>pages/listen/listen.wxml</text>
+<view class="container">
+  <view class="music-name">{{song_name}}</view>
+  <view class="music-author">{{mid_detail.name}}</view>
+  <image class="arm {{isPlay?'arm-reset':''}}" src="/picture/zhuanzhuan_gang.png"></image>
+  <view class="discContainer {{isPlay&&'disc-animate'}}">
+    <image class="disc" src="/picture/zhuanzhuan_diepian.png"></image>
+    <image class="music-image" src="{{mid_detail.picUrl}}"></image>
+  </view>
+  <view class="player">
+    <view class="slider">
+     <slider bindchange="onChangeListening" block-size="12px" activeColor="rgb(104, 152, 134)" value="{{whereissong}}"></slider>
+    </view>
+    <view class="btns">
+      <text class="loop-btn" style="color: white;">{{if2?'×1':'×2'}}</text>
+      <image class="prev-btn" src="/icon/上一首.png"></image>
+      <image class="play-btn" src="{{isPlay?'/icon/暂停.png':'/icon/播放.png'}}" bindtap="handlePlay"></image>
+      <image class="next-btn" src="/icon/下一首.png"></image>
+      <image bindtap="onLoveThisSong" class="list-btn" src="{{isLove?'/icon/我真的喜欢.png':'/icon/我喜欢.png'}}"></image>
+    </view>
+  </view>
+</view>

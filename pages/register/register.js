@@ -5,57 +5,74 @@ Page({
    * 页面的初始数据
    */
   data: {
-    birthday: "点击选择生日",
-    sex: "",
+    password: '',
+    ifequal: false,
   },
 
-  onDateChange(e) {
-    console.log(e.detail.value);
+  onGetPassword(e) {
+    console.log(e.detail.value)
     this.setData({
-      birthday: e.detail.value
+      password: e.detail.value
     })
   },
 
-  onSexChange(e) {
-    console.log(e.detail.value);
-    this.setData({
-      sex: e.detail.value
-    })
+  onCheckPassword(e) {
+    console.log(e.detail.value)
+    if (this.data.password == e.detail.value) {
+      this.setData({
+        ifequal: true
+      })
+    }
   },
 
   onRegister(e) {
     console.log(e)
-    if(e.detail.value){
-      let username = e.detail.value.username
-      let user = e.detail.value.user
+    if (e.detail.value) {
       let phone = e.detail.value.phone
       let password = e.detail.value.password
+      let checkPassword = e.detail.value.checkPassword
       let requireData = {
-        username,
-        name:user,
-        phone,
-        password,
-        birthday:this.data.birthday,
-        sex:this.data.sex
+        phone: phone,
+        password: password,
+        checkPassword: checkPassword,
+        type: 0
       }
       wx.request({
-        url: 'http://localhost:8080/music_player_war_exploded/addUser',
-        data:JSON.stringify(requireData),
-        method:"POST",
-        success(res){
-          wx.showModal({
-            title: '提示',
-            content: '登陆成功',
-            complete: (res) => {
-              if (res.confirm) {
-                wx.redirectTo({
-                  url: '/pages/index2/index2?username='+e.detail.value.username,
+        url: 'http://localhost:8080/music/user/userinfo',
+        data: {
+          phone: phone
+        },
+        success(res) {
+          if (res.data) {
+            wx.request({
+              url: 'http://localhost:8080/music/user/register',
+              data: JSON.stringify(requireData),
+              method: "POST",
+              success(res) {
+                let phone = wx.setStorageSync('phone', e.detail.value.phone)
+                wx.showModal({
+                  title: '提示',
+                  content: '注册成功',
+                  complete: (res) => {
+                    if (res.confirm) {
+                      wx.switchTab({
+                        url: '/pages/index2/index2',
+                      })
+                    }
+                  }
                 })
-              }
-            }
-          })
-        }
+              },
+            })
+          } else {
+            wx.showModal({
+              title: '提示',
+              content: '该账号已存在，请更换其他账号进行注册',
+            })
+          }
+
+        },
       })
+
     } else {
       wx.showModal({
         title: '提示',

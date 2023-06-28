@@ -1,1 +1,88 @@
-/* pages/listen/listen.wxss */
+.container{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgb(176, 220, 213);
+  position: relative;
+}
+
+.container .music-name{
+  margin: 3rpx 0;
+  color: rgb(104, 152, 134);
+  font-size: 20px;
+}
+
+.music-author{
+  font-size: 12px;
+  margin-bottom: 10rpx;
+}
+
+.container .arm{
+  width:204rpx;
+  height: 350rpx;
+  position: relative;
+  left: 72rpx;
+  z-index: 99;
+  transform: rotate(-15deg);
+  transform-origin: 30rpx 30rpx;
+  transition: transform .7s linear;
+}
+.discContainer{
+  position: relative;
+  top: -128rpx;
+  width: 490rpx;
+  height: 490rpx;
+}
+
+.discContainer .disc{
+  width: 100%;
+  height: 100%;
+}
+.discContainer .music-image{
+  width: 270rpx;
+  height: 270rpx;
+  border-radius: 100%;
+  position: absolute;
+  left: 0;right: 0;top: 0;bottom: 0;
+  margin: auto;
+}
+
+.musicContainer .arm-reset{
+  transform-origin: 50rpx 0;
+  transform: rotate(-20deg);
+  transition: transform 1s;
+}
+
+.disc-animate{
+  animation: rotate 2.5s 1s linear infinite;
+}
+@keyframes rotate{
+  from{
+    transform: rotate(0deg);
+  }
+  to{
+    transform: rotate(360deg);
+  }
+}
+
+.player{
+  width: 100%;
+  position: absolute;
+  bottom: 30rpx;
+}
+
+.btns{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.btns image{
+  width: 70rpx;
+  height: 70rpx;
+}
+.btns .play-btn,.btns .stop-btn{
+  width: 120rpx;
+  height: 120rpx;
+}
+

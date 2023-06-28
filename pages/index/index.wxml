@@ -5,7 +5,7 @@
   <view class="login">
     <form bindsubmit="onLogin" data-username="username" data-password="password">
       <view class="partoflogin">
-        账号：<input type="text" name="username"/>
+        账号：<input type="text" name="phone"/>
       </view>
       <view class="partoflogin">
         密码：<input type="password" name="password"/>
@@ -13,5 +13,8 @@
       <button form-type="submit" >登录</button>
     </form>
   </view>
-  <view bindtap="turnToRegister" class="register">点我注册</view>
+  <view class="bottle">
+   <view bindtap="turnToRegister" class="register">点我注册</view>
+  <view bindtap="turntofind" class="find">找回密码</view>
+  </view>
 </view>

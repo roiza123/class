@@ -1,0 +1,18 @@
+<view class="container">
+  <view class="top_logo_tip">
+    <view class="top_logo">
+      <view class="logo">
+        <text>今日推荐</text>
+      </view>
+    </view>
+  </view>
+  <view class="today_commendation">
+    <view class="box" wx:for="{{today_recommend_list}}" data-listid="{{item.id}}" wx:key="id" bindtap="onTurntolist">
+      <image src="{{item.picUrl}}"></image>
+      <text>{{item.name}}</text>
+    </view>
+  </view>
+  <view class="turntomine">
+    <text bindtap="onTurntomine">返回首页</text>
+  </view>
+</view>

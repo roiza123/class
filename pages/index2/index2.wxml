@@ -18,7 +18,7 @@
     </swiper-item>
   </swiper>
   <view class="icons">
-    <view class="icons-detail">
+    <view class="icons-detail" bindtap="onSeeRecommendation">
       <image class="img" src="/icon/音乐推荐.png"></image>
       <text>今日推荐</text>
     </view>
@@ -26,29 +26,29 @@
       <image class="img" src="/icon/歌单.png"></image>
       <text>我的歌单</text>
     </view>
-    <view class="icons-detail">
-      <image class="img" src="/icon/榜单 (1).png"></image>
+    <view class="icons-detail" bindtap="onTurntomusictop">
+      <image  class="img" src="/icon/榜单 (1).png"></image>
       <text>音乐榜单</text>
     </view>
     <view class="icons-detail">
-      <image class="img" src="/icon/我喜欢.png"></image>
+      <image class="img" src="/icon/我喜欢.png" bindtap="onGuessWhatilike"></image>
       <text>猜我喜欢</text>
     </view>
   </view>
   <view class="recommended_list">
     <text>音乐排行榜</text>
-    <text class="more">查看更多</text>
+    <text class="more" bindtap="onTurntomusictop">查看更多</text>
   </view>
   <scroll-view class="recommend_list2" scroll-x scroll-left="20" enhanced paging-enabled enable-flex="">
-    <view class="item_detail" wx:for="{{list}}" wx:key="id">
+    <view class="item_detail" wx:for="{{recommendedList}}" wx:key="id">
       <text class="number">{{index+1}}</text>
-      <image src="{{item.picUrl}}"></image>
+      <image src="{{item.al.picUrl}}"></image>
       <view></view>
       <text class="name">{{item.name}}</text>
     </view>
   </scroll-view>
   <view class="recommended_list3">
     <text>每日推荐</text>
-    <text class="more">查看更多</text>
+    <text class="more" bindtap="onTurntotodayRecommend">查看更多</text>
   </view>
 </view>

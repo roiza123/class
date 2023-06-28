@@ -1,23 +1,29 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
     "pages/music/music",
     "pages/index2/index2",
     "pages/register/register",
     "pages/mine/mine",
     "pages/search/search",
-    "pages/listen/listen"
+    "pages/listen/listen",
+    "pages/mine_detail/mine_detail",
+    "pages/love_detail/love_detail",
+    "pages/listen_detail/listen_detail",
+    "pages/music-top/music-top",
+    "pages/find_password/find_password",
+    "pages/today_recommend/today_recommend",
+    "pages/guess_what_ilike/guess_what_ilike"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#b0dcd5",
     "navigationBarTitleText": "罐装音乐",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black"
   },
   "tabBar": {
     "color": "#6898864",
-    "list": [
-      {
+    "list": [{
         "selectedIconPath": "icon/发现 (3).png",
         "iconPath": "icon/发现 (2).png",
         "pagePath": "pages/index2/index2",
@@ -37,6 +43,7 @@
       }
     ]
   },
+  "requiredBackgroundModes": ["audio"],
   "style": "v2",
   "sitemapLocation": "sitemap.json"
 }

@@ -1,0 +1,41 @@
+<view class="container">
+  <view class="head">
+    <button class="avatar" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
+      <image src="{{headUrl}}" ></image>
+    </button>
+    <text>{{nickname}}</text>
+  </view>
+  <view class="mine-detail">
+    <!-- username password phone sex name birthday -->
+    <form bindsubmit="onChangeDatail">
+      <view class="box">
+        账号：<input type="text" name="phone" value="{{detail.phone}}" disabled="true"/>
+      </view>
+      <view class="box">
+        性别：
+        <radio-group bindchange="onSexChange">
+          <view class="choosebox">
+            <radio value="1" name="sex" checked="{{detail.sex}}===1"></radio><text>男</text>
+            <radio value="0" name="sex" checked="{{detail.sex}}===0"></radio><text>女</text>
+          </view>
+        </radio-group>
+      </view>
+      <view class="box">
+        昵称：<input type="text" name="user" value="{{detail.nickname}}" />
+      </view>
+      <view class="box">
+        生日：
+        <picker mode="date" value="{{detail.birthday}}" bindchange="onDateChange">
+          <text>{{birthday}}</text>
+        </picker>
+      </view>
+      <view class="box">
+        <button class="button" form-type="submit">提交修改</button>
+      </view>
+    </form>
+  </view>
+  <view class="return">
+   <text bindtap="onReturnMine">返回首页</text>
+   <text bindtap="onReturnIndex">退出登录</text>
+  </view>
+</view>

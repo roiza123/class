@@ -1,0 +1,19 @@
+<view class="container">
+  <view class="top_logo_tip">
+    <view class="top_logo">
+      <view class="logo">
+        <text>音乐榜单</text>
+      </view>
+    </view>
+  </view>
+  <view class="today_commendation">
+    <view bindtap="onTurntolisten" 
+    class="box" wx:for="{{recommendedList}}" data-musicId="{{item.id}}" wx:key="id" >
+      <image src="{{item.al.picUrl}}"></image>
+      <text>{{item.name}}</text>
+    </view>
+  </view>
+  <view class="turntoindex2">
+    <text class="turn" bindtap="onTurntoindex2">返回首页</text>
+  </view>
+</view>
